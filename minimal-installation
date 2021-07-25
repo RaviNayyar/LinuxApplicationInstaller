@@ -1,10 +1,10 @@
 #!/bin/bash
+
 echo "==================================Auto Install Script For Ubuntu: ======================================================"
-sudo apt-get update
+sudo apt-get update -y
 sleep 2
 sudo apt-get upgrade -y
 sleep 2
-
 
 echo "==================================INSTALLING: Google Chrome======================================================"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -17,7 +17,6 @@ sudo apt-get install google-chrome-stable  -y
 sleep 2
 echo "==============================================================================================================="
 
-
 echo "==================================INSTALLING: Sublime Text====================================================="
 sudo apt update -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -28,7 +27,6 @@ sudo apt install sublime-text -y
 sleep 2
 echo "==============================================================================================================="
 
-
 echo "==================================INSTALLING: ATOM====================================================="
 sudo apt update -y
 sudo apt install software-properties-common apt-transport-https wget
@@ -38,7 +36,6 @@ sudo apt install atom
 sleep 2
 echo "==============================================================================================================="
 
-
 sudo apt-get install net-tools -y
 sleep 2
 sudo apt-get install terminator -y
@@ -47,52 +44,36 @@ sudo apt-get install vlc -y
 sleep 2
 sudo apt-get install gpart -y
 sleep 2
-sudo apt-get update  -y
+sudo apt-get install meld  -y
 sleep 2
-
-
-echo "==================================INSTALLING: SLACK ======================================================"
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.8-amd64.deb
-sleep 2
-sudo apt install ./slack-desktop-*.deb -y
-sleep 2
-echo "==============================================================================================================="
-
-
-echo "==================================INSTALLING: VIRTUALBOX ======================================================"
-wget https://download.virtualbox.org/virtualbox/6.0.0/Oracle_VM_VirtualBox_Extension_Pack-6.0.0.vbox-extpack
-sleep 2
-sudo apt install virtualbox virtualbox-ext-pack
-sleep 2
-echo "==============================================================================================================="
-
-
 sudo apt-get install aircrack-ng -y
-sleep2
+sleep 2
 sudo apt-get install wireshark -y
 sleep 2
-sudo apt-get update
+sudo apt-get update -y
 sleep 2
-
-
-echo "==================================INSTALLING: MAILSPRING ======================================================"
-sudo apt-get install gdebi-core wget -y
-sleep 2
-wget -O ~/mailspring.deb "https://updates.getmailspring.com/download?platform=linuxDeb"
-sleep 2
-ls ~/mailspring.deb
-sleep 2
-sudo gdebi ~/mailspring.deb
-sleep 2
-echo "==============================================================================================================="
-
 
 echo "==================================ENDING INSTALATION ---> REBOOTING======================================================"
-sudo apt-get update
+sudo apt-get update -y
 sleep 2
 sudo apt-get upgrade -y
 sleep 2
 echo "==============================================================================================================="
 
+
+cat >> ~/.bashrc << EOF
+alias cb="vim ~/.bashrc"
+alias sb="source ~/.bashrc"
+alias sl="ls"
+alias rf="rm -rf "
+alias zp="zip"
+alias c="clear"
+alias r="reset"
+alias uz="unzip"
+alias tb="tail ~/.bashrc -n "
+alias open="xdg-open"
+alias uztar=="tar -xvf "
+alias file="nautilus"
+EOF
 
 reboot
