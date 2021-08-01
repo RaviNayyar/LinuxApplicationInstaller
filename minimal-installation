@@ -32,10 +32,12 @@ sudo apt update -y
 sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
-sudo apt install atom
+sudo apt install atom -y
 sleep 2
 echo "==============================================================================================================="
 
+sudo apt-get install vim -y
+sleep 2
 sudo apt-get install net-tools -y
 sleep 2
 sudo apt-get install terminator -y
